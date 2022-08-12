@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "513af194-e0ac-41d2-85e9-bc13f570f807",
+		"name": "test-form",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10690751"
+	},
+	"item": [
+		{
+			"name": "client",
+			"item": [
+				{
+					"name": "/client/test",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/work/Documents/tests/document.pdf"
+								},
+								{
+									"key": "dto",
+									"type": "file",
+									"src": "/C:/Users/work/Documents/tests/test.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/client/test",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/client/test/stream",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/work/Documents/tests/document.pdf"
+								},
+								{
+									"key": "dto",
+									"type": "file",
+									"src": "/C:/Users/work/Documents/tests/test.json"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8080/client/stream",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"client",
+								"stream"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

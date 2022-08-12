@@ -2,3 +2,5 @@
 /application/target/
 /client/target/
 /model/target/
+*.iml
+/.idea/

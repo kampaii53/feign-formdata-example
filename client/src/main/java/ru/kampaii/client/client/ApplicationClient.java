@@ -35,6 +35,18 @@ public interface ApplicationClient {
             return new JsonFormWriter();
         }
 
+        // possible solution
+//        @Bean
+//        public AbstractFormWriter enhancedFormWriter() {
+//            return new EnhancedFormWriter();
+//        }
+    }
+
+    class EnhancedFormWriter extends JsonFormWriter {
+        @Override
+        public boolean isApplicable(Object object) {
+            return object instanceof TestDto;
+        }
     }
 
 }
