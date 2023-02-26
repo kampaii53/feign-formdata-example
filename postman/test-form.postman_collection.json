@@ -10,7 +10,7 @@
 			"name": "client",
 			"item": [
 				{
-					"name": "/client/test",
+					"name": "multipart upload",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -20,12 +20,12 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/work/Documents/tests/document.pdf"
+									"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test-file.pdf"
 								},
 								{
 									"key": "dto",
 									"type": "file",
-									"src": "/C:/Users/work/Documents/tests/test.json"
+									"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test.json"
 								}
 							]
 						},
@@ -44,7 +44,7 @@
 					"response": []
 				},
 				{
-					"name": "/client/test/stream",
+					"name": "form-data upload",
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -54,12 +54,12 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": "/C:/Users/work/Documents/tests/document.pdf"
+									"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test-file.pdf"
 								},
 								{
 									"key": "dto",
 									"type": "file",
-									"src": "/C:/Users/work/Documents/tests/test.json"
+									"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test.json"
 								}
 							]
 						},

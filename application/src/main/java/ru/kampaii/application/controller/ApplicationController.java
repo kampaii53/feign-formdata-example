@@ -16,7 +16,7 @@ public class ApplicationController {
             @RequestPart("dto") TestDto testDto,
             @RequestPart("file") MultipartFile file
     ) {
-        log.info("incoming {}", testDto);
+        log.info("incoming {}, filesize {}", testDto, file.getSize());
     }
 
     @PostMapping(path = "/stream")
