@@ -17,7 +17,7 @@ public class ApplicationController {
             @RequestPart("file") MultipartFile file
     ) {
         log.info("incoming {}, filesize {}", testDto, file.getSize());
-        if (testDto != null && file.getSize() > 0) {
+        if (testDto != null && "test".equals(testDto.getTest()) && file.getSize() > 0) {
             return 1;
         }
         return 0;
@@ -29,7 +29,7 @@ public class ApplicationController {
             @RequestPart("file") byte[] file
     ) {
         log.info("incoming {} bytes {}", testDto, file);
-        if (testDto != null && file.length > 0) {
+        if (testDto != null && "test".equals(testDto.getTest()) && file.length > 0) {
             return 1;
         }
         return 0;
