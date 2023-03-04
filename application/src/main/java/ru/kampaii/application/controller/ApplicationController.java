@@ -12,18 +12,26 @@ import ru.kampaii.example.model.TestDto;
 public class ApplicationController {
 
     @PostMapping(path = "/file")
-    public void testFileUpload(
+    public int testFileUpload(
             @RequestPart("dto") TestDto testDto,
             @RequestPart("file") MultipartFile file
     ) {
         log.info("incoming {}, filesize {}", testDto, file.getSize());
+        if (testDto != null && file.getSize() > 0) {
+            return 1;
+        }
+        return 0;
     }
 
     @PostMapping(path = "/stream")
-    public void testStreamUpload(
+    public int testStreamUpload(
             @RequestPart("dto") TestDto testDto,
             @RequestPart("file") byte[] file
     ) {
         log.info("incoming {} bytes {}", testDto, file);
+        if (testDto != null && file.length > 0) {
+            return 1;
+        }
+        return 0;
     }
 }

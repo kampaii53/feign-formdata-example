@@ -12,18 +12,18 @@ import org.springframework.web.multipart.MultipartFile;
 import ru.kampaii.example.model.TestDto;
 
 @FeignClient(name = "application-client", url = "localhost:8081"
-        , configuration = ApplicationClient.Configuration.class
+        , configuration = ApplicationFormClient.Configuration.class
 )
-public interface ApplicationClient {
+public interface ApplicationFormClient {
 
     @PostMapping(path = "/file", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    void testFileUpload(
+    int testFileUpload(
             @RequestPart("dto") TestDto testDto,
             @RequestPart("file") MultipartFile file
     );
 
     @PostMapping(path = "/stream", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    void testStreamUpload(
+    int testStreamUpload(
             @RequestPart("dto") TestDto testDto,
             @RequestPart("file") FormData file
     );
@@ -33,19 +33,6 @@ public interface ApplicationClient {
         @Bean
         public AbstractFormWriter jsonFormWriter() {
             return new JsonFormWriter();
-        }
-
-        // possible solution
-//        @Bean
-//        public AbstractFormWriter enhancedFormWriter() {
-//            return new EnhancedFormWriter();
-//        }
-    }
-
-    class EnhancedFormWriter extends JsonFormWriter {
-        @Override
-        public boolean isApplicable(Object object) {
-            return object instanceof TestDto;
         }
     }
 

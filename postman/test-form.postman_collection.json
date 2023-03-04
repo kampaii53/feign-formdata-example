@@ -10,6 +10,81 @@
 			"name": "client",
 			"item": [
 				{
+					"name": "form",
+					"item": [
+						{
+							"name": "multipart upload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test-file.pdf"
+										},
+										{
+											"key": "dto",
+											"type": "file",
+											"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test.json"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/client/form/test",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"client",
+										"form",
+										"test"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "form-data upload",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test-file.pdf"
+										},
+										{
+											"key": "dto",
+											"type": "file",
+											"src": "/C:/Users/work/IdeaProjects/feign-formdata-example/postman/test.json"
+										}
+									]
+								},
+								"url": {
+									"raw": "localhost:8080/client/form/stream",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"client",
+										"form",
+										"stream"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "multipart upload",
 					"request": {
 						"method": "POST",
